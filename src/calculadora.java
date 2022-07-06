@@ -1,15 +1,6 @@
 import java.awt.*;
-import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.text.ParseException;
 import javax.swing.*;
-import javax.swing.border.TitledBorder;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableModel;
 
-import static javax.swing.text.StyleConstants.getFontSize;
 
 public class calculadora extends JPanel {
 
@@ -105,284 +96,223 @@ public class calculadora extends JPanel {
 
     public void Eventos() {
 
-        btnNums[0].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tfDisplay.setText(tfDisplay.getText()+"0");
-                btnMais.setEnabled(true);
-                btnMenos.setEnabled(true);
-                btnMultiplicacao.setEnabled(true);
-                btnDivisao.setEnabled(true);
+        btnNums[0].addActionListener(e -> {
+            tfDisplay.setText(tfDisplay.getText()+"0");
+            btnMais.setEnabled(true);
+            btnMenos.setEnabled(true);
+            btnMultiplicacao.setEnabled(true);
+            btnDivisao.setEnabled(true);
 
-                if (aux == 1){
-                    btnIgual.setEnabled(true);
-                }
-            }
-
-        });
-        btnNums[1].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tfDisplay.setText(tfDisplay.getText()+"1");
-                btnMais.setEnabled(true);
-                btnMenos.setEnabled(true);
-                btnMultiplicacao.setEnabled(true);
-                btnDivisao.setEnabled(true);
-
-                if (aux == 1){
-                    btnIgual.setEnabled(true);
-                }
-            }
-
-        });
-        btnNums[2].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tfDisplay.setText(tfDisplay.getText()+"2");
-                btnMais.setEnabled(true);
-                btnMenos.setEnabled(true);
-                btnMultiplicacao.setEnabled(true);
-                btnDivisao.setEnabled(true);
-
-                if (aux == 1){
-                    btnIgual.setEnabled(true);
-                }
-            }
-
-        });
-        btnNums[3].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tfDisplay.setText(tfDisplay.getText()+"3");
-                btnMais.setEnabled(true);
-                btnMenos.setEnabled(true);
-                btnMultiplicacao.setEnabled(true);
-                btnDivisao.setEnabled(true);
-
-                if (aux == 1){
-                    btnIgual.setEnabled(true);
-                }
-            }
-
-        });
-        btnNums[4].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tfDisplay.setText(tfDisplay.getText()+"4");
-                btnMais.setEnabled(true);
-                btnMenos.setEnabled(true);
-                btnMultiplicacao.setEnabled(true);
-                btnDivisao.setEnabled(true);
-
-                if (aux == 1){
-                    btnIgual.setEnabled(true);
-                }
-            }
-
-        });
-        btnNums[5].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tfDisplay.setText(tfDisplay.getText()+"5");
-                btnMais.setEnabled(true);
-                btnMenos.setEnabled(true);
-                btnMultiplicacao.setEnabled(true);
-                btnDivisao.setEnabled(true);
-
-                if (aux == 1){
-                    btnIgual.setEnabled(true);
-                }
-            }
-
-        });
-        btnNums[6].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tfDisplay.setText(tfDisplay.getText()+"6");
-                btnMais.setEnabled(true);
-                btnMenos.setEnabled(true);
-                btnMultiplicacao.setEnabled(true);
-                btnDivisao.setEnabled(true);
-
-                if (aux == 1){
-                    btnIgual.setEnabled(true);
-                }
-            }
-
-        });
-        btnNums[7].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tfDisplay.setText(tfDisplay.getText()+"7");
-                btnMais.setEnabled(true);
-                btnMenos.setEnabled(true);
-                btnMultiplicacao.setEnabled(true);
-                btnDivisao.setEnabled(true);
-
-                if (aux == 1){
-                    btnIgual.setEnabled(true);
-                }
-            }
-
-        });
-        btnNums[8].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tfDisplay.setText(tfDisplay.getText()+"8");
-                btnMais.setEnabled(true);
-                btnMenos.setEnabled(true);
-                btnMultiplicacao.setEnabled(true);
-                btnDivisao.setEnabled(true);
-
-                if (aux == 1){
-                    btnIgual.setEnabled(true);
-                }
-            }
-
-        });
-        btnNums[9].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tfDisplay.setText(tfDisplay.getText()+"9");
-                btnMais.setEnabled(true);
-                btnMenos.setEnabled(true);
-                btnMultiplicacao.setEnabled(true);
-                btnDivisao.setEnabled(true);
-
-                if (aux == 1){
-                    btnIgual.setEnabled(true);
-                }
-            }
-
-        });
-
-        btnMais.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                operacao = "mais";
-                auxn1 = tfDisplay.getText().replace(",",".");
-                n1 = Float.parseFloat(auxn1);
-
-                btnMais.setEnabled(false);
-                btnMenos.setEnabled(false);
-                btnMultiplicacao.setEnabled(false);
-                btnDivisao.setEnabled(false);
-
-                aux = 1;
-                tfDisplay.setText("");
-
-                System.out.println(""+n1+" "+n2);
-                btnVirgula.setEnabled(true);
+            if (aux == 1){
+                btnIgual.setEnabled(true);
             }
         });
-        btnMenos.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                operacao = "menos";
+        btnNums[1].addActionListener(e -> {
+            tfDisplay.setText(tfDisplay.getText()+"1");
+            btnMais.setEnabled(true);
+            btnMenos.setEnabled(true);
+            btnMultiplicacao.setEnabled(true);
+            btnDivisao.setEnabled(true);
 
-                auxn1 = tfDisplay.getText().replace(",",".");
-                n1 = Float.parseFloat(auxn1);
-
-                btnMais.setEnabled(false);
-                btnMenos.setEnabled(false);
-                btnMultiplicacao.setEnabled(false);
-                btnDivisao.setEnabled(false);
-
-                aux = 1;
-                tfDisplay.setText("");
-
-                System.out.println(""+n1+" "+n2);
-                btnVirgula.setEnabled(true);
+            if (aux == 1){
+                btnIgual.setEnabled(true);
             }
         });
-        btnMultiplicacao.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                operacao = "multiplicacao";
+        btnNums[2].addActionListener(e -> {
+            tfDisplay.setText(tfDisplay.getText()+"2");
+            btnMais.setEnabled(true);
+            btnMenos.setEnabled(true);
+            btnMultiplicacao.setEnabled(true);
+            btnDivisao.setEnabled(true);
 
-                auxn1 = tfDisplay.getText().replace(",",".");
-                n1 = Float.parseFloat(auxn1);
-
-                btnMais.setEnabled(false);
-                btnMenos.setEnabled(false);
-                btnMultiplicacao.setEnabled(false);
-                btnDivisao.setEnabled(false);
-
-                aux = 1;
-                tfDisplay.setText("");
-
-                System.out.println(""+n1+" "+n2);
-                btnVirgula.setEnabled(true);
+            if (aux == 1){
+                btnIgual.setEnabled(true);
             }
         });
-        btnDivisao.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                operacao = "divisao";
+        btnNums[3].addActionListener(e -> {
+            tfDisplay.setText(tfDisplay.getText()+"3");
+            btnMais.setEnabled(true);
+            btnMenos.setEnabled(true);
+            btnMultiplicacao.setEnabled(true);
+            btnDivisao.setEnabled(true);
 
-                auxn1 = tfDisplay.getText().replace(",",".");
-                n1 = Float.parseFloat(auxn1);
+            if (aux == 1){
+                btnIgual.setEnabled(true);
+            }
+        });
+        btnNums[4].addActionListener(e -> {
+            tfDisplay.setText(tfDisplay.getText()+"4");
+            btnMais.setEnabled(true);
+            btnMenos.setEnabled(true);
+            btnMultiplicacao.setEnabled(true);
+            btnDivisao.setEnabled(true);
 
-                btnMais.setEnabled(false);
-                btnMenos.setEnabled(false);
-                btnMultiplicacao.setEnabled(false);
-                btnDivisao.setEnabled(false);
+            if (aux == 1){
+                btnIgual.setEnabled(true);
+            }
+        });
+        btnNums[5].addActionListener(e -> {
+            tfDisplay.setText(tfDisplay.getText()+"5");
+            btnMais.setEnabled(true);
+            btnMenos.setEnabled(true);
+            btnMultiplicacao.setEnabled(true);
+            btnDivisao.setEnabled(true);
 
-                aux = 1;
-                tfDisplay.setText("");
+            if (aux == 1){
+                btnIgual.setEnabled(true);
+            }
+        });
+        btnNums[6].addActionListener(e -> {
+            tfDisplay.setText(tfDisplay.getText()+"6");
+            btnMais.setEnabled(true);
+            btnMenos.setEnabled(true);
+            btnMultiplicacao.setEnabled(true);
+            btnDivisao.setEnabled(true);
 
-                System.out.println(""+n1+" "+n2);
-                btnVirgula.setEnabled(true);
+            if (aux == 1){
+                btnIgual.setEnabled(true);
+            }
+        });
+        btnNums[7].addActionListener(e -> {
+            tfDisplay.setText(tfDisplay.getText()+"7");
+            btnMais.setEnabled(true);
+            btnMenos.setEnabled(true);
+            btnMultiplicacao.setEnabled(true);
+            btnDivisao.setEnabled(true);
+
+            if (aux == 1){
+                btnIgual.setEnabled(true);
+            }
+        });
+        btnNums[8].addActionListener(e -> {
+            tfDisplay.setText(tfDisplay.getText()+"8");
+            btnMais.setEnabled(true);
+            btnMenos.setEnabled(true);
+            btnMultiplicacao.setEnabled(true);
+            btnDivisao.setEnabled(true);
+
+            if (aux == 1){
+                btnIgual.setEnabled(true);
+            }
+        });
+        btnNums[9].addActionListener(e -> {
+            tfDisplay.setText(tfDisplay.getText()+"9");
+            btnMais.setEnabled(true);
+            btnMenos.setEnabled(true);
+            btnMultiplicacao.setEnabled(true);
+            btnDivisao.setEnabled(true);
+
+            if (aux == 1){
+                btnIgual.setEnabled(true);
             }
         });
 
+        btnMais.addActionListener(e -> {
+            operacao = "mais";
+            auxn1 = tfDisplay.getText().replace(",",".");
+            n1 = Float.parseFloat(auxn1);
 
-        btnIgual.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                n2 = 0f;
-                auxn2 = tfDisplay.getText().replace(",",".");
-                n2 = Float.parseFloat(auxn2);
-                Float resp = Calcular(n1,n2);
+            btnMais.setEnabled(false);
+            btnMenos.setEnabled(false);
+            btnMultiplicacao.setEnabled(false);
+            btnDivisao.setEnabled(false);
 
-                tfDisplay.setText(""+resp);
-                btnVirgula.setEnabled(true);
-            }
+            aux = 1;
+            tfDisplay.setText("");
+
+            System.out.println(""+n1+" "+n2);
+            btnVirgula.setEnabled(true);
+        });
+        btnMenos.addActionListener(e -> {
+            operacao = "menos";
+
+            auxn1 = tfDisplay.getText().replace(",",".");
+            n1 = Float.parseFloat(auxn1);
+
+            btnMais.setEnabled(false);
+            btnMenos.setEnabled(false);
+            btnMultiplicacao.setEnabled(false);
+            btnDivisao.setEnabled(false);
+
+            aux = 1;
+            tfDisplay.setText("");
+
+            System.out.println(""+n1+" "+n2);
+            btnVirgula.setEnabled(true);
+        });
+        btnMultiplicacao.addActionListener(e -> {
+            operacao = "multiplicacao";
+
+            auxn1 = tfDisplay.getText().replace(",",".");
+            n1 = Float.parseFloat(auxn1);
+
+            btnMais.setEnabled(false);
+            btnMenos.setEnabled(false);
+            btnMultiplicacao.setEnabled(false);
+            btnDivisao.setEnabled(false);
+
+            aux = 1;
+            tfDisplay.setText("");
+
+            System.out.println(""+n1+" "+n2);
+            btnVirgula.setEnabled(true);
+        });
+        btnDivisao.addActionListener(e -> {
+            operacao = "divisao";
+
+            auxn1 = tfDisplay.getText().replace(",",".");
+            n1 = Float.parseFloat(auxn1);
+
+            btnMais.setEnabled(false);
+            btnMenos.setEnabled(false);
+            btnMultiplicacao.setEnabled(false);
+            btnDivisao.setEnabled(false);
+
+            aux = 1;
+            tfDisplay.setText("");
+
+            System.out.println(""+n1+" "+n2);
+            btnVirgula.setEnabled(true);
         });
 
-        btnLimpar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tfDisplay.setText("");
-                n1 = null;
-                n2 = null;
 
-                btnMais.setEnabled(false);
-                btnMenos.setEnabled(false);
-                btnMultiplicacao.setEnabled(false);
-                btnDivisao.setEnabled(false);
+        btnIgual.addActionListener(e -> {
+            n2 = 0f;
+            auxn2 = tfDisplay.getText().replace(",",".");
+            n2 = Float.parseFloat(auxn2);
+            float resp = Calcular(n1,n2);
 
-                btnIgual.setEnabled(false);
-                btnVirgula.setEnabled(true);
-                Calcular(0f,0f);
-
-            }
+            tfDisplay.setText(""+resp);
+            btnVirgula.setEnabled(true);
         });
 
-        btnVirgula.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        btnLimpar.addActionListener(e -> {
+            tfDisplay.setText("");
+            n1 = null;
+            n2 = null;
 
-                tfDisplay.setText(tfDisplay.getText()+",");
-                btnVirgula.setEnabled(false);
+            btnMais.setEnabled(false);
+            btnMenos.setEnabled(false);
+            btnMultiplicacao.setEnabled(false);
+            btnDivisao.setEnabled(false);
 
-            }
+            btnIgual.setEnabled(false);
+            btnVirgula.setEnabled(true);
+            Calcular(0f,0f);
+
+        });
+
+        btnVirgula.addActionListener(e -> {
+
+            tfDisplay.setText(tfDisplay.getText()+",");
+            btnVirgula.setEnabled(false);
+
         });
 
     }
 
     public float Calcular(Float num1, Float num2){
-        Float resposta = 0f;
+        float resposta = 0f;
         switch (operacao){
             case "mais":
                 resposta =  num1 + num2; break;
